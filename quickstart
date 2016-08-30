@@ -1,0 +1,99 @@
+#! /bin/bash
+
+# A simple script to help you quickly create a project directory.
+# This creates a directory with well structured files suitable for each programming language
+# For now, it creates an angular, node-express, and a flask project directory
+# Usage
+# quickstart flask - To quickly create a flask project structure. 
+# quickstart python - To quickly create a simple disposable python utility script
+# quickstart mean - To create a mean stack application
+# Note that this creates the project directory in your current working directory
+# To specify the project directory, use the --dir flag
+# Author - Falade Mayowa
+# Email - mayowa.falade@andela.com
+
+
+
+if [[ $# -eq 0 ]]; then
+
+	echo "usage: quickstart <project-stack> <directory-name>"
+	echo ""
+	echo "These are sample 'quickstart' commands:"
+	echo ""
+	echo "To create a flask project directory: 'quickstart flask'"
+	echo "To create a python project directory: 'quickstart python'"
+	echo "To create a nodejs project directory: 'quickstart node' ... or 'quickstart nodejs'"
+	echo "To create an express project directory with a server ready to go: 'quickstart express'"
+	echo ""
+	exit 1
+
+fi
+
+
+
+if [[ $1 = 'flask' || $1 = 'python' || $1 = 'express' || $1 = 'node' || $1 = 'nodejs' ]]; then
+
+	if [[ ! $2 ]]; then
+
+		echo "You need to specify a name for your project"
+		echo ""
+		echo "Example:"
+		echo ""
+		echo "'quickstart ${1} mySuperAwesomeProject'"
+		echo ""
+		exit 1
+	
+	fi
+
+else
+
+	echo "Sorry, we currently do not quickstart '${1}' projects."
+	echo ""
+	echo "Supported projects are:"
+	echo ""
+	echo "1. flask"
+	echo ""
+	echo "2. python"
+	echo ""
+	echo "3. express"
+	echo ""
+	exit 1
+	
+fi
+		
+
+curr_dir=`pwd`
+framework="${1}"
+project_name="${2}"
+file_path="${curr_dir}/${project_name}"
+
+
+if [[ "${framework}" = "flask" ]]; then
+
+	mkdir "${file_path}"
+	mkdir "${file_path}/test"
+	mkdir "${file_path}/${project_name}"
+	mkdir "${file_path}/${project_name}/module1"
+	mkdir "${file_path}/${project_name}/module2"
+	touch "${file_path}/${project_name}/module1/__init__.py"
+	touch "${file_path}/${project_name}/module2/__init__.py"
+
+	touch "${file_path}/setup.py"
+	touch "${file_path}/.gitignore"
+	echo '*.pyc' >> "${file_path}/.gitignore" 
+	touch "${file_path}/requirements.txt"
+	touch "${file_path}/manage.py"
+	touch "${file_path}/${project_name}/__init__.py"
+	touch "${file_path}/${project_name}/config.py"
+	
+	echo ""
+	echo "Created a new '${framework}' project structure for ${project_name}. Enjoy!"
+	echo ""
+	exit 0
+fi
+
+
+
+
+
+

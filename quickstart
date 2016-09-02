@@ -15,15 +15,14 @@
 
 
 if [[ $# -eq 0 ]]; then
-
-	echo "usage: quickstart <project-stack> <directory-name>"
+	
 	echo ""
-	echo "These are sample 'quickstart' commands:"
+	echo "Usage: quickstart <project-stack> <directory-name>"
 	echo ""
-	echo "To create a flask project directory: 'quickstart flask'"
-	echo "To create a python project directory: 'quickstart python'"
-	echo "To create a nodejs project directory: 'quickstart node' ... or 'quickstart nodejs'"
-	echo "To create an express project directory with a server ready to go: 'quickstart express'"
+	echo "Supported project-stacks are:"
+	echo "    flask, python, express"
+	echo ""
+	echo "Example Usage: 'quickstart flask <project-name>'"
 	echo ""
 	exit 1
 
@@ -34,7 +33,8 @@ fi
 if [[ $1 = 'flask' || $1 = 'python' || $1 = 'express' || $1 = 'node' || $1 = 'nodejs' ]]; then
 
 	if [[ ! $2 ]]; then
-
+		
+		echo ""
 		echo "You need to specify a name for your project"
 		echo ""
 		echo "Example:"
@@ -46,16 +46,20 @@ if [[ $1 = 'flask' || $1 = 'python' || $1 = 'express' || $1 = 'node' || $1 = 'no
 	fi
 
 else
-
+	
+	echo ""
 	echo "Sorry, we currently do not quickstart '${1}' projects."
 	echo ""
 	echo "Supported projects are:"
 	echo ""
 	echo "1. flask"
+	echo "    Example usage: 'quickstart flask <project-name>'"
 	echo ""
 	echo "2. python"
+	echo "    Example usage: 'quickstart python <project-name>'"
 	echo ""
 	echo "3. express"
+	echo "    Example usage: 'quickstart express <project-name>'"
 	echo ""
 	exit 1
 	

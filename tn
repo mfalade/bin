@@ -1,0 +1,24 @@
+#! /bin/bash
+
+
+now=`date "+%Y-%m-%d: %H: %M: %S"`
+filepath=${HOME}/notes.txt
+read -p 'Note Here> ' note
+
+if [[ $note ]]; then
+
+	if [[ $# -ne 0 ]]; then
+	
+		echo "No arguments required actually."
+	
+	else
+
+		echo "[${now}] ${note}" >> ${filepath}
+		echo [Note Saved] ${note}
+	
+	fi
+else
+
+	echo "Are you shittin me right now ? You can't save an empty note."
+
+fi

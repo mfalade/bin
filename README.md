@@ -1,6 +1,11 @@
 # Utility Shell Scripts
-
 A number of shell scripts you can use to achieve basic and common tasks.
+
+These are basic timesaving scripts I use all the time and they were borne out of the need to be more efficient.
+Many times, I have to create new projects from the scratch either to try out a new concept, or teach something.
+I decided to write a script to automate this. also, I have added other time saving scripts.
+
+If you are anything like me, then you might find a couple of these useful.
 
 ---
 
@@ -14,8 +19,8 @@ A number of shell scripts you can use to achieve basic and common tasks.
 ### changextension
 A script that allows you change the extensions of all files in a directory, with a particular extension.
 
-Say you have a directory that contains 50 `.txt` files and you want to change their extensions to `.json`or something else,
-then this utility script is for you
+Say you have a directory that contains 50 `.txt` files and you want to change their extensions to `.json`or something else.
+I can't imagine attempting to do that manually. Save yourself the headache, that's exactly why this script exists.
 
 + To use, simply switch to the directory containing the files and type:
 
@@ -65,8 +70,10 @@ quickstart express mySuperAwesomeProject
 
 
 ### tn
-A simple note taking app
-Still a work in progress
+Who says you have to leave the convenience of your command line to take quick notes ?
+You can easily take notes from the command line using this script.
++ Currently, all notes are stored to a notes.txt file in your home directory.
++ This is still a work in progress and the next update would allow you specify where notes should be stored.
 
 + To save a note, simply type:
 

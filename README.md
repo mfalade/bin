@@ -19,11 +19,15 @@ then this utility script is for you
 
 + To use, simply switch to the directory containing the files and type:
 
-...`changextension <current-extension> <target-extension>`
+```bash
+changextension <current-extension> <target-extension>
+```
 
 + Example Usage 
 
-...`changextension txt json`
+```bash
+changextension txt json
+```
 
 
 ### numguess
@@ -33,7 +37,9 @@ You get perks for how fast you are able to guess the number ;)
 
 + Usage: 
 
-...`numguess`
+```bash
+numguess
+```
 
 
 ### quickstart
@@ -47,11 +53,15 @@ Supported projects are:
 
 + Usage:
 
-...`quickstart <project-stack> <project-name>`
+```bash
+quickstart <project-stack> <project-name>
+```
 
 + Example:
 
-...`quickstart express mySuperAwesomeProject`
+```bash
+quickstart express mySuperAwesomeProject
+```
 
 
 ### tn
@@ -60,11 +70,15 @@ Still a work in progress
 
 + To save a note, simply type:
 
-...`tn`
+```bash
+tn
+```
 
 + To retrieve all your notes, type: 
 
-...`tn notes`
+```bash
+tn notes
+```
 
 
 ---

@@ -22,3 +22,5 @@ else
 	echo "Are you shittin me right now ? You can't save an empty note."
 
 fi
+
+exit 0

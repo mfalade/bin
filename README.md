@@ -13,7 +13,7 @@ If you are anything like me, then you might find a couple of these useful.
 + changextension
 + numguess
 + quickstart
-+ tn
++ note
 
 
 ### changextension
@@ -69,7 +69,7 @@ quickstart express mySuperAwesomeProject
 ```
 
 
-### tn
+### note
 Who says you have to leave the convenience of your command line to take quick notes ?
 You can easily take notes from the command line using this script.
 + Currently, all notes are stored to a notes.txt file in your home directory.
@@ -78,13 +78,13 @@ You can easily take notes from the command line using this script.
 + To save a note, simply type:
 
 ```bash
-tn
+note
 ```
 
 + To retrieve all your notes, type: 
 
 ```bash
-tn notes
+note list
 ```
 
 

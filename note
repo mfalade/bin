@@ -2,6 +2,7 @@
 
 
 now=`date "+%Y-%m-%d: %H: %M: %S"`
+green="\033[0;92m"
 filepath=${HOME}/notes.txt
 
 if [[ $# -eq 1 ]]; then
@@ -27,12 +28,12 @@ if [[ $# -eq 1 ]]; then
 
 fi
 
-read -p 'Enter note :: ' note
+read -p 'Enter note> ' note
 
 if [[ $note ]]; then
 
 	echo "[${now}] ${note}" >> "${filepath}"
-	echo "[Saved ✔] ${note}"
+	echo -e "${green}✔ saved:: ${note}"
 	
 else
 

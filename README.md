@@ -6,8 +6,8 @@ These are basic timesaving scripts I use all the time and they were borne out of
 ### Motivation
 
 + I work a lot from the command line, and many times I want to take notes. Having to decide which of the gazillion notes app out there to use is time consuming,not to talk of switching between the terminal and whatever note app I decide to use.
-+ Many times, I have to create new projects from the scratch either to try out a new concept, or teach something. I often find myself creating new project directories and this can be time consuming.
-+ Sometimes I just want to unwind a little after staring at the terminal for too long. I want something not so distracting, but intersting enough to help me relax.
++ Many times, I have to create new projects from the scratch either to try out a new concept, or teach something. I often find myself creating new project directories as well as figure out the right structure..
++ Sometimes I just want to unwind a little after staring at the terminal for too long. I want something not so distracting, but interesting enough to help me relax.
 
 
 I decided to write shell scripts to address these concerns. Also, I added some other time saving scripts.

@@ -57,23 +57,32 @@ numguess
 ### quickstart
 A bash script that helps you quickly create standard project structures and allow you focus on development.
 
-Supported projects are:
-+ Express Js
-+ Flask
-
-*Support for more programming frameworks would be added soon*
-
 + Usage:
-
 ```bash
 quickstart <project-stack> <project-name>
 ```
 
-+ Example:
+Supported projects are:
 
-```bash
-quickstart express mySuperAwesomeProject
-```
++ Angular Js
+    + Example:
+    ```bash
+    quickstart angular mySuperAwesomeProject
+    ```
++ Express Js
+    + Example:
+    ```bash
+    quickstart express mySuperAwesomeProject
+    ```
++ Flask
+    + Example:
+    ```bash
+    quickstart flask mySuperAwesomeProject
+    ```
+
+
+*Support for more frameworks would be added soon*
+
 
 
 ### note
@@ -82,7 +91,7 @@ You can easily take notes from the command line using this script.
 + Currently, all notes are stored to a notes.txt file in your home directory.
 + This is still a work in progress and the next update would allow you specify where notes should be stored.
 
-+ To save a note, simply type:
++ To save a note, simply type 'note', then enter you note at the prompt.:
 
 ```bash
 note

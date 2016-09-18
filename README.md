@@ -64,12 +64,12 @@ quickstart <project-stack> <project-name>
 
 Supported projects are:
 
-+ Angular Js
++ AngularJS
     + Example:
     ```bash
     quickstart angular mySuperAwesomeProject
     ```
-+ Express Js
++ ExpressJS
     + Example:
     ```bash
     quickstart express mySuperAwesomeProject

@@ -1,16 +1,13 @@
 #! /bin/bash
 
-# A simple script to help you quickly create a project directory.
-# This creates a directory with well structured files suitable for each programming language
-# For now, it creates an angular, node-express, and a flask project directory
-# Usage
-# quickstart flask - To quickly create a flask project structure. 
-# quickstart python - To quickly create a simple disposable python utility script
+# A simple script to help you quickly create a project structure.
+# This creates a directory with well structured files suitable for each programming stack
+# For now, it can be used to quickstart angular, express, and a flask applications
 # quickstart mean - To create a mean stack application
 # Note that this creates the project directory in your current working directory
 # To specify the project directory, use the --dir flag
 # Author - Falade Mayowa
-# Email - mayowa.falade@andela.com
+# Email - falademayowa240@gmail.com
 
 
 
@@ -20,7 +17,7 @@ if [[ $# -eq 0 ]]; then
 	echo "Usage: quickstart <project-stack> <directory-name>"
 	echo ""
 	echo "Supported project-stacks are:"
-	echo "    flask, python, express"
+	echo "    flask, angular, express"
 	echo ""
 	echo "Example Usage: 'quickstart flask <project-name>'"
 	echo ""
@@ -30,7 +27,7 @@ fi
 
 
 
-if [[ $1 = 'flask' || $1 = 'python' || $1 = 'express' || $1 = 'node' || $1 = 'nodejs' ]]; then
+if [[ $1 = 'flask' || $1 = 'express' || $1 = 'node' || $1 = 'angular' ]]; then
 
 	if [[ ! $2 ]]; then
 		
@@ -122,9 +119,3 @@ echo ""
 echo "Created a new '${framework}' project structure for ${project_name}. Enjoy!"
 echo ""
 exit 0
-
-
-
-
-
-

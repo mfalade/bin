@@ -60,7 +60,7 @@ You can easily take notes from the command line using this script.
 + Currently, all notes are stored to a notes.txt file in your home directory.
 + Updates to this script would allow you specify where notes should be saved.
 
-+ To save a note, simply type 'note', then enter you note at the prompt.
++ To save a note, simply type `note`, then enter you note at the prompt.
 
 ```bash
 note

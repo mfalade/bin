@@ -7,22 +7,22 @@
 
 guessed=$(($RANDOM % 100))
 count=0
-what_user_guesses=
+user_guess=
 
-until [[ what_user_guesses -eq guessed ]]; do
+until [[ user_guess -eq guessed ]]; do
 		
 	((count++))
-	read -p "Enter your guess> " what_user_guesses
+	read -p "Enter your guess> " user_guess
 	
-	if [[ $what_user_guesses =~ ^[0-9]+$ ]]; then
+	if [[ $user_guess =~ ^[0-9]+$ ]]; then
 		
-		if [[ what_user_guesses -gt guessed ]]; then
+		if [[ user_guess -gt guessed ]]; then
 			echo ""
-			echo "Your target is LESS than ${what_user_guesses}."
+			echo "Your target is LESS than ${user_guess}."
 			echo ""
-		elif [[ what_user_guesses -lt guessed ]]; then
+		elif [[ user_guess -lt guessed ]]; then
 			echo ""
-			echo "Your target is GREATER than ${what_user_guesses}."
+			echo "Your target is GREATER than ${user_guess}."
 			echo ""
 		else
 

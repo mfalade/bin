@@ -92,7 +92,7 @@ case $framework in
 		mkdir "${file_path}/tests/middlewares"
 		mkdir "${file_path}/tests/helpers"
 		touch "${file_path}/.gitignore"
-		touch "${file_path}/app.js"
+		touch "${file_path}/server.js"
 		touch "${file_path}/package.json"
 		;;
 	'flask')

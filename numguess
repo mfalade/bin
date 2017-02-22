@@ -1,0 +1,51 @@
+#! /bin/bash
+
+
+# A game which generates a random number and allows the user to guess what the number is
+# It gives hints when the player misses the number
+
+
+guessed=$(($RANDOM % 100))
+count=0
+user_guess=
+
+until [[ user_guess -eq guessed ]]; do
+		
+	((count++))
+	read -p "Enter your guess> " user_guess
+	
+	if [[ $user_guess =~ ^[0-9]+$ ]]; then
+		
+		if [[ user_guess -gt guessed ]]; then
+			echo ""
+			echo "Your target is LESS than ${user_guess}."
+			echo ""
+		elif [[ user_guess -lt guessed ]]; then
+			echo ""
+			echo "Your target is GREATER than ${user_guess}."
+			echo ""
+		else
+
+			if [[ count -lt 3 || count -eq 3 ]]; then
+				feedback="  Wow!! Unbelievable \\(◎o◎)/            "
+			elif [[ count -gt 3 && count -lt 7 ]]; then
+				feedback="  Well, Not so bad. Way to go!          "
+			else
+				feedback="  Not so impressive ( ͡° ͜ʖ ͡°).           "
+			fi
+			echo "+----------------------------------------+"
+			echo "|  You guessed the number. Yasssssss!!!  | "
+			echo "|  Took you ${count} tries.                     | "
+			echo "|${feedback}|"
+			echo "+----------------------------------------+"
+		fi
+	
+	else
+		
+		echo ""
+		echo "Invalid Input.. Number Expected"
+		echo ""
+	fi
+done
+
+exit 0

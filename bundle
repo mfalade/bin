@@ -1,0 +1,71 @@
+#! /bin/bash
+
+WORK_DIR=$HOME/Desktop/codeVilla
+BUNDLE_DIR="$WORK_DIR/bundles"
+cd $WORK_DIR
+
+echo "Switched to `pwd`"
+echo All the magic happens here
+
+FILE_EXTENSION=".zip"
+PROJECT_DIR="corrivium-video-interface-web-app"
+BASE_PROJECT_PATTERN="corrivium-video-interface-web-app-v"
+LATEST_VERSION=0
+NEW_VERSION=0
+
+EXISTING_BUNDLES=$(ls $BUNDLE_DIR | grep $FILE_EXTENSION)
+echo $EXISTING_BUNDLES
+
+function strip {
+    echo ${1#$"$2"}
+}
+
+function update_version_number {
+    re='^[0-9]+$'
+    if [[ $1 =~ $re && $1 -gt $LATEST_VERSION ]]; then
+        LATEST_VERSION=$1
+    fi
+}
+
+function pretty_print {
+    outline="------------------------------------------------------------"
+    echo
+    echo $outline
+    echo "$@"
+    echo $outline
+    echo 
+}
+
+function clone_project {
+    rsync -av --exclude='node_modules' $PROJECT_DIR $BUNDLE_DIR
+    pretty_print "Cloned project to ${BUNDLE_DIR}"
+}
+
+function create_bundle {
+    cd $BUNDLE_DIR
+    pretty_print "Switched to $(pwd)"
+
+    NEW_DIRECTORY="${BASE_PROJECT_PATTERN}${NEW_VERSION}"
+    mv $PROJECT_DIR $NEW_DIRECTORY
+
+    pretty_print "Zipping $NEW_DIRECTORY..."
+
+    cd $NEW_DIRECTORY
+    zip -r "../${NEW_DIRECTORY}" * .[^.]*
+
+    echo 'DONE!!'
+    pretty_print "Created bundle ${NEW_DIRECTORY}.zip"
+}
+
+if [[ $EXISTING_BUNDLES ]]; then
+    for i in $EXISTING_BUNDLES; do 
+        base=$(basename $i $FILE_EXTENSION)
+        version_number=$(strip $base $BASE_PROJECT_PATTERN)
+        update_version_number $version_number
+    done
+    NEW_VERSION=$(expr $LATEST_VERSION + 1)
+fi
+
+clone_project
+create_bundle
+

@@ -1,14 +1,14 @@
 #! /bin/bash
 
 if [[ $# -ne 2 ]]; then
-  echo ""
-  echo "You need to specify the pull request id as well as the static asset bundle verion."
-  echo ""
-  echo "usage:" 
-  echo ""
-  echo "setpv 666 my-jstor_20161212T5555"
-  echo ""
-  exit 1
+	echo ""
+	echo "You need to specify the pull request id as well as the static asset bundle verion."
+	echo ""
+	echo "usage:"
+	echo ""
+	echo "setpv 666 my-jstor_20161212T5555"
+	echo ""
+	exit 1
 fi
 
 pull_request_id=$1
@@ -21,11 +21,11 @@ echo "Are you sure you want to update $service_name's static asset bundle to $bu
 read -p "(y/n) " res
 
 if [[ $res == 'y' || $res == 'yes' ]]; then
-  echo "Setting static asset bundle. Please wait..."
-  node $HOME/Desktop/codeVilla/service-locator/main $service_name $bundle_version
-  exit 0
+	echo "Setting static asset bundle. Please wait..."
+	node $HOME/Desktop/codeVilla/service-locator/main $service_name $bundle_version
+	exit 0
 else
-  echo "Aborting..."
-  sleep 1
-  exit 1
+	echo "Aborting..."
+	sleep 1
+	exit 1
 fi

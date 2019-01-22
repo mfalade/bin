@@ -1,0 +1,17 @@
+alias gs='git status'
+alias gco='git checkout'
+alias gb='git branch'
+alias gl='git log --oneline'
+alias fixup='git commit --fixup'
+alias yolo='git push origin HEAD'
+alias r='source ~/.profile'
+alias getupdates='git fetch && git rebase origin/master'
+alias aliases='vi ~/.dotfiles/.aliases'
+alias legacy='smarthost && cd client/legacy'
+alias next='smarthost && cd client/next'
+
+alias codevilla='cd ~/Desktop/codevilla'
+alias smarthost='codevilla && cd smarthost'
+alias practice='codevilla && cd practice'
+
+alias ccc='code .'

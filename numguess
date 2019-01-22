@@ -1,21 +1,19 @@
 #! /bin/bash
 
-
 # A game which generates a random number and allows the user to guess what the number is
 # It gives hints when the player misses the number
-
 
 guessed=$(($RANDOM % 100))
 count=0
 user_guess=
 
 until [[ user_guess -eq guessed ]]; do
-		
+
 	((count++))
 	read -p "Enter your guess> " user_guess
-	
+
 	if [[ $user_guess =~ ^[0-9]+$ ]]; then
-		
+
 		if [[ user_guess -gt guessed ]]; then
 			echo ""
 			echo "Your target is LESS than ${user_guess}."
@@ -39,9 +37,9 @@ until [[ user_guess -eq guessed ]]; do
 			echo "|${feedback}|"
 			echo "+----------------------------------------+"
 		fi
-	
+
 	else
-		
+
 		echo ""
 		echo "Invalid Input.. Number Expected"
 		echo ""

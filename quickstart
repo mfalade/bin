@@ -9,10 +9,8 @@
 # Author - Falade Mayowa
 # Email - falademayowa240@gmail.com
 
-
-
 if [[ $# -eq 0 ]]; then
-	
+
 	echo ""
 	echo "Usage: quickstart <project-stack> <directory-name>"
 	echo ""
@@ -25,12 +23,10 @@ if [[ $# -eq 0 ]]; then
 
 fi
 
-
-
-if [[ $1 = 'flask' || $1 = 'express' || $1 = 'node' || $1 = 'angular' ]]; then
+if [[ $1 == 'flask' || $1 == 'express' || $1 == 'node' || $1 == 'angular' ]]; then
 
 	if [[ ! $2 ]]; then
-		
+
 		echo ""
 		echo "You need to specify a name for your project"
 		echo ""
@@ -39,11 +35,11 @@ if [[ $1 = 'flask' || $1 = 'express' || $1 = 'node' || $1 = 'angular' ]]; then
 		echo "'quickstart ${1} mySuperAwesomeProject'"
 		echo ""
 		exit 1
-	
+
 	fi
 
 else
-	
+
 	echo ""
 	echo "Sorry, we currently do not quickstart '${1}' projects."
 	echo ""
@@ -59,61 +55,56 @@ else
 	echo "    Example usage: 'quickstart express <project-name>'"
 	echo ""
 	exit 1
-	
-fi
-		
 
-curr_dir=`pwd`
+fi
+
+curr_dir=$(pwd)
 framework="${1}"
 project_name="${2}"
 file_path="${curr_dir}/${project_name}"
 
-
-
-if [[ -d "${file_path}"  ]]; then
+if [[ -d "${file_path}" ]]; then
 
 	echo "A directory with name '${project_name}' already exists."
 	exit 1
 
 fi
 
-
 case $framework in
 
-	'express')
-		mkdir "$file_path" 
-		mkdir "${file_path}/controllers"
-		mkdir "${file_path}/middlewares"
-		mkdir "${file_path}/models"
-		mkdir "${file_path}/routes"
-		mkdir "${file_path}/helpers"
-		mkdir "${file_path}/tests"
-		mkdir "${file_path}/tests/controllers"
-		mkdir "${file_path}/tests/middlewares"
-		mkdir "${file_path}/tests/helpers"
-		touch "${file_path}/.gitignore"
-		touch "${file_path}/server.js"
-		touch "${file_path}/package.json"
-		;;
-	'flask')
-		mkdir "${file_path}"
-		mkdir "${file_path}/test"
-		mkdir "${file_path}/${project_name}"
-		mkdir "${file_path}/${project_name}/module1"
-		mkdir "${file_path}/${project_name}/module2"
-		touch "${file_path}/${project_name}/module1/__init__.py"
-		touch "${file_path}/${project_name}/module2/__init__.py"
-		touch "${file_path}/setup.py"
-		touch "${file_path}/.gitignore"
-		echo '*.pyc' >> "${file_path}/.gitignore" 
-		touch "${file_path}/requirements.txt"
-		touch "${file_path}/manage.py"
-		touch "${file_path}/${project_name}/__init__.py"
-		touch "${file_path}/${project_name}/config.py"
-		;;
+'express')
+	mkdir "$file_path"
+	mkdir "${file_path}/controllers"
+	mkdir "${file_path}/middlewares"
+	mkdir "${file_path}/models"
+	mkdir "${file_path}/routes"
+	mkdir "${file_path}/helpers"
+	mkdir "${file_path}/tests"
+	mkdir "${file_path}/tests/controllers"
+	mkdir "${file_path}/tests/middlewares"
+	mkdir "${file_path}/tests/helpers"
+	touch "${file_path}/.gitignore"
+	touch "${file_path}/server.js"
+	touch "${file_path}/package.json"
+	;;
+'flask')
+	mkdir "${file_path}"
+	mkdir "${file_path}/test"
+	mkdir "${file_path}/${project_name}"
+	mkdir "${file_path}/${project_name}/module1"
+	mkdir "${file_path}/${project_name}/module2"
+	touch "${file_path}/${project_name}/module1/__init__.py"
+	touch "${file_path}/${project_name}/module2/__init__.py"
+	touch "${file_path}/setup.py"
+	touch "${file_path}/.gitignore"
+	echo '*.pyc' >>"${file_path}/.gitignore"
+	touch "${file_path}/requirements.txt"
+	touch "${file_path}/manage.py"
+	touch "${file_path}/${project_name}/__init__.py"
+	touch "${file_path}/${project_name}/config.py"
+	;;
 
 esac
-
 
 echo ""
 echo "Created a new '${framework}' project structure for ${project_name}. Enjoy!"

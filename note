@@ -1,19 +1,17 @@
 #! /bin/bash
 
-
-now=`date "+%Y-%m-%d: %H: %M: %S"`
-green="\033[0;92m"
-filepath=${HOME}/notes.txt
+NOW=$(date "+%Y-%m-%d: %H: %M: %S")
+GREEN="\033[0;92m"
+FILE_PATH=${HOME}/notes.txt
 
 if [[ $# -eq 1 ]]; then
-
 	if [[ $1 == 'list' ]]; then
-		if [[ -f $filepath ]]; then
-			num_notes=$(wc -l < "${filepath}")
+		if [[ -f $FILE_PATH ]]; then
+			num_notes=$(wc -l <"${FILE_PATH}")
 			echo YOU HAVE ${num_notes} NOTES.
 			echo '-----------------'
 			echo ''
-			cat $filepath
+			cat $FILE_PATH
 			echo ''
 			exit 0
 		else
@@ -25,20 +23,15 @@ if [[ $# -eq 1 ]]; then
 			exit 0
 		fi
 	fi
-
 fi
 
 read -p 'Enter note> ' note
 
 if [[ $note ]]; then
-
-	echo "[${now}] ${note}" >> "${filepath}"
-	echo -e "${green}✔ saved:: ${note}"
-	
+	echo "[${NOW}] ${note}" >>"${FILE_PATH}"
+	echo -e "${GREEN}✔ saved:: ${note}"
 else
-
 	echo You can\'t save an empty note.
-
 fi
 
 exit 0
